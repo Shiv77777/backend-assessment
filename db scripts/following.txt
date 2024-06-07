@@ -1,0 +1,8 @@
+CREATE TABLE following (
+    id BIGSERIAL PRIMARY KEY,
+    account int NOT NULL,
+    follower int NOT NULL,
+    CONSTRAINT fk_account FOREIGN KEY (account) REFERENCES user_details(id),
+    CONSTRAINT fk_follower FOREIGN KEY (follower) REFERENCES user_details(id),
+    UNIQUE (account, follower)
+);

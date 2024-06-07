@@ -1,0 +1,15 @@
+CREATE TABLE discussions (
+    id BIGSERIAL PRIMARY KEY,
+    text_field VARCHAR(500),
+    image VARCHAR(200),
+    hash_tags VARCHAR(200),
+    created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+ALTER TABLE discussions
+ADD COLUMN creator VARCHAR(200);
+
+ALTER TABLE discussions
+ADD CONSTRAINT fk_user
+FOREIGN KEY (creator)
+REFERENCES user_details(email);

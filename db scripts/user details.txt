@@ -1,0 +1,8 @@
+CREATE TABLE user_details(
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100) UNIQUE NOT NULL,
+    mobile VARCHAR(20) UNIQUE NOT NULL,
+    password VARCHAR(200) NOT NULL
+);
+
